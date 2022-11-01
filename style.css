@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Laila&display=swap');
+body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url('images/flagimg.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+.maincontainer{
+    margin-bottom: 50px;
+}
+.container{
+    /* background-color: rgb(139, 139, 139); */
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    border: 5px solid #d0d0d0;
+    background-color: #acacac8f;
+    margin-top: 20px;
+    display: block;
+    border-radius: 20px;
+    height: 100%;
+    width: 40%;
+    max-width: 2000px;
+    margin: 2px auto;
+    text-align: center;
+    transition: 0.5s;
+}
+.container:hover{
+    border: 5px solid black;
+    background-color: #acacacec;
+}
+.heading{
+    padding-top: 20px;
+    font-family: 'Laila', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+.content{
+    display: block;
+    margin: 20px 5px;
+}
+.content1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.content1 input{
+    font-size: 20px;
+    color: white;
+    width: 30%;
+    height: 45px;
+    background-color: rgb(0, 157, 255);
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+.content1 input:hover{
+    background-color: green;
+    border-radius: 20px;
+}
+.container b {
+    font-size: 30px;
+}
+.content input{
+    margin-top: 10px;
+    width: 65%;
+    height: 30px;
+    border: 1px solid rgb(91, 91, 91);
+    border-radius: 10px;
+}
+input::placeholder{
+    font-size: 20px;
+    text-align: center;
+    opacity: .7;
+}
+input:active{
+    transform: scale(.98);
+}
+.container input{
+    text-align: center;
+    padding-top: 15px;
+    font-size: 25px;
+    accent-color: rgb(0, 97, 24);
+}
+.status{
+    font-size: 25px;
+}
+label input[type="radio"]{
+    height: 25px;
+    width: 25px;
+}
+.radiotick{
+    height: 15px;
+}
+@media only screen and (max-width: 1000px) {
+    .container {
+      background-color: #acacacec;
+      width: 75%;
+      border: 5px solid black;
+    }
+    .heading{
+        font-size: 15px;
+    }
+    .content1 input{
+        font-size: 18px;
+    }
+    .container b{
+        font-size: 20px;
+    }
+    input::placeholder{
+        font-size: 76
+    }
+    .status{
+        font-size: 20px;
+    }
+    .content input{
+        margin-top: 10px;
+        height: 15px;
+    }
+  }

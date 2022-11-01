@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="maincontainer">
+        <div class="heading">
+            <h1>Employement survey form</h1>
+        </div>
+        <div class="container">
+            <form method="post" action="" name="google-sheet">
+                <div class="content">
+                    <label for="Name"><b>Full Name :</b></label><br>
+                    <input name="Name" type="text" placeholder="Enter Your Name" required>
+                </div>
+                <div class="content">
+                    <label for="Email"><b>Email :</b></label><br>
+                    <input name="Email" type="email" placeholder="Enter Your Email" required>
+                </div>
+                <div class="content">
+                    <label for="Mobile"><b>Mobile Number :</b></label><br>
+                    <input name='Mobile Number' type="tel" placeholder="Enter Your Mobile Number" required>
+                </div>
+                <div class="content2">
+                    <b>Gender :</b><br><br>
+                    <label class="status" for="male">
+                        <input type="radio" class="radio" name="Gender" id="male" value="male"
+                            checked>Male<br><br></label>
+                    <label class="status" for="female">
+                        <input type="radio" class="radio" id="female" name="Gender"
+                            value="female">Female<br><br></label>
+                    <label class="status" for="others">
+                        <input type="radio" class="radio" id="others" name="Gender" value="others">Others <br><br>
+                    </label>
+                </div>
+                <div class="content2">
+                    <b>Employeement Status :</b><br><br>
+                    <label class="status" for="employeed">
+                        <input type="radio" value="Employeed" class="radio" name="Employement Status" id="employeed"
+                            checked>
+                        Employeed
+                        <br><br></label>
+                    <label class="status" class="form-check-label" for="intern">
+                        <input type="radio" class="radio" value="Intern" name="Employement Status" id="intern">
+                        Intern
+                        <br><br></label>
+                    <label class="status" class="form-check-label" for="unemployeed">
+                        <input type="radio" class="radio" value="Unemployeed" class="status1" name="Employement Status"
+                            id="unemployeed">
+                        Unemployeed
+                    </label>
+                </div>
+                <div class="content">
+                    <label for="Country"><b>Country Of Employeement :</b></label><br>
+                    <input type="text" name="Country" placeholder="Enter Country Of Employeement" required>
+                </div>
+                <div class="content">
+                    <label for="Field"><b>Field Of Study :</b></label><br>
+                    <input type="text" name="Field Of Study" placeholder="Field Of Employeement" required>
+                </div>
+                <div class="content">
+                    <label for="Income"><b>Annual Income :</b></label><br>
+                    <input type="number" name="Income" placeholder="Annual Income" required>
+                </div>
+                <div class="content1">
+                    <input type="submit" name="submit" class="btnSubmit btn-block" value="Submit" />
+                </div>
+            </form>
+            <script src="index.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
