@@ -14,7 +14,6 @@ body{
     margin-bottom: 50px;
 }
 .container{
-    /* background-color: rgb(139, 139, 139); */
     font-family: 'Rajdhani', sans-serif;
     font-weight: bold;
     border: 5px solid #d0d0d0;
@@ -97,6 +96,7 @@ label input[type="radio"]{
 .radiotick{
     height: 15px;
 }
+/* Media Query for the responsive page design. */
 @media only screen and (max-width: 1000px) {
     .container {
       background-color: #acacacec;
