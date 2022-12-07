@@ -13,51 +13,49 @@ In the google Sheets go to the Extension
 After clicking on the EXTENSIONS button click on the "Apps Script" and then paste the below block of code in it 
 First of all paste the below 2 lines, in the first line change the name of sheet, i have the sheet name as "Sheet 1", you can directly copy and paste the second line and then below block of code in that Apps Scripts
 
-
-  1. var sheetName = 'Sheet1'
+```
+var sheetName = 'Sheet1'
   
-  2. var scriptProp = PropertiesService.getScriptProperties()
-  
-  3.
-  
-		function intialSetup () {
-		  var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
-		  scriptProp.setProperty('key', activeSpreadsheet.getId())
-		}
+var scriptProp = PropertiesService.getScriptProperties()
+ 
+function intialSetup () {
+  var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+  scriptProp.setProperty('key', activeSpreadsheet.getId())
+}
 
-		function doPost (e) {
-		  var lock = LockService.getScriptLock()
-		  lock.tryLock(10000)
+function doPost (e) {
+  var lock = LockService.getScriptLock()
+  lock.tryLock(10000)
 
-		  try {
-			var doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
-			var sheet = doc.getSheetByName(sheetName)
+  try {
+	var doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+	var sheet = doc.getSheetByName(sheetName)
 
-			var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
-			var nextRow = sheet.getLastRow() + 1
+	var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+	var nextRow = sheet.getLastRow() + 1
 
-			var newRow = headers.map(function(header) {
-			  return header === 'timestamp' ? new Date() : e.parameter[header]
-			})
+	var newRow = headers.map(function(header) {
+	  return header === 'timestamp' ? new Date() : e.parameter[header]
+	})
 
-			sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+	sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
-			return ContentService
-			  .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
-			  .setMimeType(ContentService.MimeType.JSON)
-		  }
+	return ContentService
+	  .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+	  .setMimeType(ContentService.MimeType.JSON)
+  }
 
-		  catch (e) {
-			return ContentService
-			  .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
-			  .setMimeType(ContentService.MimeType.JSON)
-		  }
+  catch (e) {
+	return ContentService
+	  .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+	  .setMimeType(ContentService.MimeType.JSON)
+  }
 
-		  finally {
-			lock.releaseLock()
-		  }
-		}
-
+  finally {
+	lock.releaseLock()
+  }
+}
+```
 # Connecting the Google sheets to the HTML form
 
 After completing the above steps, click on the run, then simply click on the Deploy button and click on the New Deployment Click the Gear icon next to the elect Type text and select Web App, Fill out the required fields and depoly the app, again reun the App Script and you're done., You'll get the Script link then copy script link and then paste it in the index.js file and you're good to go.
